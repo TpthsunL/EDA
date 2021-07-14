@@ -31,7 +31,9 @@ stats.pearsonr(temp_df['order_id']['count'], temp_df['price]['mean']
 
 ### F1, AUC가 가장 많이 쓰인다. 
 
-### 
+------------------------------------------------------
+### # 거래 가격(price)의 z-score를 계산합니다. 이는 해당 데이터의 가격이 카테고리의 평균에 비해 어느정도로 높거나 낮은지를 알 수 있게 하는 점수입니다.
+order_df['z_score_in_category'] = order_df.groupby('product_category_name_english')['price'].transform(lambda x: (x - x.mean()) / x.std())
 
 ### 
 
